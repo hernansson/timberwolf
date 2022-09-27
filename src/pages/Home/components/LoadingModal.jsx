@@ -1,18 +1,6 @@
 import * as React from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  useMediaQuery,
-  useTheme,
-  IconButton,
-  Typography,
-} from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { Dialog, DialogContent, DialogContentText } from '@mui/material';
 import { styles } from './styles';
-import { tosText } from './tosText';
-import { Box } from '@mui/system';
 export const LoadingModal = ({ open, setOpen }) => {
   const handleClose = () => {
     setOpen(false);

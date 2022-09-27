@@ -16,7 +16,7 @@ export const styles = {
   content: {
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
-    gap: { xs: '16px', md: '128px' },
+    gap: { xs: '16px', md: '96px' },
     alignItems: 'center',
     justifyContent: 'center',
     height: 'inherit',

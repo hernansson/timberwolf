@@ -18,13 +18,13 @@ export const Confirmation = () => {
         sx={{ alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
         <LogosConfirm />
         <Typography
-          fontSize={'7px'}
+          fontSize={'18px'}
           fontWeight={700}
-          sx={{ width: { xs: '90%', md: '50%' } }}
+          textAlign={'center'}
+          sx={{ width: { xs: '90%', md: '60%' } }}
           color={'text.primary'}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit sed
-          odio congue aliquam libero, sit mauris. Interdum enim, auctor cras
-          nunc aliquet ristique ege.
+          ¡Gracias por enviarnos tus datos! Ahora estás más cerca del Giro de
+          Rigo.
         </Typography>
       </VStack>
       <Box

@@ -4,8 +4,8 @@ import brand from '../../../assets/img/landing/brand.svg';
 import { HStack, VStack } from '../../../components/common';
 export const BrandContent = () => {
   return (
-    <VStack sx={{ gap: '24px', alignItems: 'center' }}>
-      <HStack sx={{ gap: '16px', width: '90%', justifyContent: 'flex-start' }}>
+    <VStack sx={{ gap: '32px', alignItems: 'center' }}>
+      <HStack sx={{ width: '120%', justifyContent: 'flex-start' }}>
         <CardMedia
           component={'img'}
           src={brand}
@@ -15,7 +15,7 @@ export const BrandContent = () => {
       <VStack sx={{ gap: '16px' }}>
         <Typography
           fontSize={'14px'}
-          fontWeight={500}
+          fontWeight={700}
           lineHeight={'22px'}
           color="text.primary">
           ¡Con Manzana Postobón el Giro de Rigo es otra cosa!
@@ -32,7 +32,7 @@ export const BrandContent = () => {
           fontWeight={500}
           lineHeight={'22px'}
           color="text.primary">
-          ¡El 21 de septiembre lo sabrás! Regístrate para mantenerte informado
+          ¡El 4 de Octubre lo sabrás!
         </Typography>
         <Typography
           fontSize={'14px'}

@@ -1,9 +1,7 @@
 import React from 'react';
-import { HStack } from '../../components/common';
 import { BrandContent } from './components/BrandContent';
 import { RegisterContainer } from './components/RegisterContainer';
-import { Box, CardMedia, Typography } from '@mui/material';
-import TimberWolf from '../../assets/img/landing/timberwolf.png';
+import { Box } from '@mui/material';
 import Background from '../../assets/img/landing/background.png';
 import { styles } from './components/styles';
 
@@ -18,15 +16,6 @@ export const Home = () => {
         minHeight: '100vh',
       }}>
       <Box sx={styles.mainContainer}>
-        <HStack sx={{ justifyContent: { xs: 'center', md: 'flex-end' } }}>
-          <Box sx={{ width: { xs: '32%', md: '16%' } }}>
-            <CardMedia
-              component={'img'}
-              src={TimberWolf}
-              sx={{ objectFit: 'contain' }}
-            />
-          </Box>
-        </HStack>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Box sx={styles.content}>
             <Box
@@ -40,12 +29,6 @@ export const Home = () => {
             </Box>
           </Box>
         </Box>
-        <Typography
-          fontWeight={700}
-          fontSize={'10.65px'}
-          color={'text.primary'}>
-          NFT / COLECTION
-        </Typography>
       </Box>
     </Box>
   );
