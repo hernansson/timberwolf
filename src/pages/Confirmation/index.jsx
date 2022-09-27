@@ -1,9 +1,9 @@
-import { Typography, CardMedia, Box } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import BackgroundConfirmation from '../../assets/img/landing/background_confirmation.png';
 import { VStack } from '../../components/common';
 import { LogosConfirm } from './components/LogosConfirm';
-import TimberLogo from '../../assets/img/landing/timberwolf.png';
+
 export const Confirmation = () => {
   document.body.style = `background-image: url(${BackgroundConfirmation});background-size:cover;background-repeat:no-repeat;background-attachment:fixed`;
   return (

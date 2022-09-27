@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import Background from '../../assets/img/landing/background.png';
 import { styles } from './components/styles';
 
-export const Home = () => {
+export const Register = () => {
   document.body.style = `background-image: url(${Background});background-size:cover;background-repeat:no-repeat;background-attachment:fixed`;
   return (
     <Box
