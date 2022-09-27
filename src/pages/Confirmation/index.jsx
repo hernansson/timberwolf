@@ -10,10 +10,9 @@ export const Confirmation = () => {
     <VStack
       sx={{
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         minHeight: '100vh',
       }}>
-      <Box></Box>
       <VStack
         sx={{ alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
         <LogosConfirm />
@@ -27,13 +26,6 @@ export const Confirmation = () => {
           Rigo.
         </Typography>
       </VStack>
-      <Box
-        sx={{
-          mb: { xs: '16px', md: '32px' },
-          alignSelf: { xs: 'center', md: 'flex-start' },
-        }}>
-        <CardMedia component={'img'} src={TimberLogo} sx={{ width: '100%' }} />
-      </Box>
     </VStack>
   );
 };
