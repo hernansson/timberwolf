@@ -1,8 +1,10 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, useTheme, useMediaQuery } from '@mui/material';
 import NavBar from './NavBar';
 
 export const Layout = ({ children }) => {
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <>
       <Box
@@ -12,10 +14,18 @@ export const Layout = ({ children }) => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Box sx={{ width: '100%', position: 'fixed', top: '0' }}>
+        <Box sx={{ width: '100%', position: 'sticky', top: 0, zIndex: 999 }}>
           <NavBar />
         </Box>
-        <Box sx={{ maxWidth: '1440px', width: '80%' }}>{children}</Box>
+        <Box
+          sx={{
+            maxWidth: '1440px',
+            width: '80%',
+            marginTop: isMd ? '40px' : '80px',
+            marginBottom: isMd ? '40px' : '80px',
+          }}>
+          {children}
+        </Box>
       </Box>
     </>
   );

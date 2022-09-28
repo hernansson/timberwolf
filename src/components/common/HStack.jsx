@@ -6,8 +6,6 @@ export const HStack = ({ children, ...props }) => {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
         ...props.sx,
       }}>
       {children}

@@ -11,7 +11,6 @@ export const styles = {
     gap: '16px',
     width: '80%',
     alignSelf: 'center',
-    my: '64px',
   },
   content: {
     display: 'flex',

@@ -66,7 +66,7 @@ export const NavBarDrawer = () => {
     <div>
       <React.Fragment key={'right'}>
         <Button onClick={toggleDrawer('right', true)}>
-          <MenuIcon />
+          <MenuIcon sx={{ color: 'white' }} />
         </Button>
         <Drawer
           anchor={'right'}
