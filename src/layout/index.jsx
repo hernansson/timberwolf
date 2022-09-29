@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import NavBar from './NavBar';
-
+import { Footer } from './Footer';
 export const Layout = ({ children }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.down('md'));
@@ -19,12 +19,21 @@ export const Layout = ({ children }) => {
         </Box>
         <Box
           sx={{
-            maxWidth: '1440px',
-            width: '80%',
-            marginTop: isMd ? '40px' : '80px',
-            marginBottom: isMd ? '40px' : '80px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            minHeight: 'calc(100vh - 80px)',
+            width: '-webkit-fill-available',
           }}>
-          {children}
+          <Box></Box>
+          <Box
+            sx={{
+              marginTop: isMd ? '40px' : '80px',
+              marginBottom: isMd ? '40px' : '80px',
+            }}>
+            {children}
+          </Box>
+          <Footer />
         </Box>
       </Box>
     </>

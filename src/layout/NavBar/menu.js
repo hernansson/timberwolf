@@ -3,11 +3,13 @@ export const menu = [
   {
     name: 'Home',
     icon: '',
-    style: { fontWeight: 700, fontStyle: 'italic' },
+    style: { fontWeight: 700, fontStyle: 'italic', cursor: 'pointer' },
+    path: '/home',
   },
   {
     name: 'Ofertar',
     icon: <WhatshotIcon sx={{ color: 'red' }} />,
+    style: { cursor: 'pointer' },
   },
-  { name: 'FAQS', icon: '' },
+  { name: 'FAQS', icon: '', style: { cursor: 'pointer' } },
 ];

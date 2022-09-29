@@ -8,8 +8,8 @@ export const NFTList = ({ nfts }) => {
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '16px',
-        justifyContent: 'center',
+        gap: '32px',
+        justifyContent: { md: 'flex-start', xs: 'center' },
       }}>
       {nfts.map(nft => (
         <NFTCard price={nft.price} img={nft.img} />

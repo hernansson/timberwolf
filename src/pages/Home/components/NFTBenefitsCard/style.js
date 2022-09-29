@@ -1,8 +1,9 @@
 export const styles = {
   mainContainer: {
-    background: 'rgba( 255, 255, 255, 0.1 )',
-    boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-    backdropFilter: 'blur(50.5px )',
+    background:
+      'linear-gradient(76.06deg, rgba(234, 233, 233, 0.132) -4.84%, rgba(128, 128, 128, 0.0855) -4.83%)',
+    boxShadow: '63px 58px 77px rgba(0, 0, 0, 0.58)',
+    backdropFilter: 'blur(49.5px )',
     borderRadius: '30px',
     border: '3px solid rgba( 255, 255, 255, 0.4 )',
     padding: '32px',

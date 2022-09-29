@@ -13,6 +13,7 @@ export const OfferBanner = () => {
         justifyContent: 'center',
         alignItems: 'center',
         padding: 4,
+        width: '-webkit-fill-available',
       }}>
       <Box
         sx={{

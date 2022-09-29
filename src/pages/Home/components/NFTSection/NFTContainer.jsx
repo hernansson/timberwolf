@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getNFTs } from '../../../../api/getNFTs';
 import { NFTList } from './NFTList';
@@ -12,6 +12,7 @@ export const NFTContainer = () => {
     console.log(error);
   }
   if (isLoading) {
+    return console.log('loading...');
   }
   if (isSuccess) {
   }

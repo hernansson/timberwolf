@@ -9,7 +9,7 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '16px',
-    width: '75%',
+    width: '80%',
     alignSelf: 'center',
   },
   content: {

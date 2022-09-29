@@ -8,21 +8,21 @@ export const socialmedias = [
   {
     name: 'facebook',
     icon: <FacebookIcon style={style.icon} />,
-    link: 'https://www.facebook.com/bitsports.co/',
+    link: 'https://www.facebook.com/',
   },
   {
     name: 'twiter',
     icon: <TwitterIcon style={style.icon} />,
-    link: 'https://twitter.com/bitsportsco?lang=en',
+    link: 'https://twitter.com/',
   },
   {
     name: 'linkedin',
     icon: <LinkedInIcon style={style.icon} />,
-    link: 'https://www.linkedin.com/company/bitsports',
+    link: 'https://www.linkedin.com/',
   },
   {
     name: 'instagram',
     icon: <InstagramIcon style={style.icon} />,
-    link: 'https://www.instagram.com/bitsports.co/',
+    link: 'https://www.instagram.com/',
   },
 ];
