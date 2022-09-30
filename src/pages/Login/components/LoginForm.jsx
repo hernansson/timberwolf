@@ -6,15 +6,18 @@ import {
   Checkbox,
   Button,
   FormHelperText,
+  Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
 import { VStack } from '../../../components/common';
 import { validations } from './validations';
+import { useNavigate } from 'react-router-dom';
 export const LoginForm = ({ handleAsync }) => {
+  const navigate = useNavigate();
   const [userForm, setUserForm] = useState('');
   const [isValid, setIsValid] = useState({
     password: false,
-    email: false,
+    user: false,
   });
 
   const handleChange = e => {
@@ -36,13 +39,13 @@ export const LoginForm = ({ handleAsync }) => {
           E-Mail:
         </InputLabel>
         <OutlinedInput
-          name="email"
+          name="user"
           fullWidth
           onChange={handleChange}
           sx={{ borderRadius: '8px' }}
         />
-        <FormHelperText error={!isValid['email']}>
-          {isValid['email'] ? '' : 'E-Mail invalido'}
+        <FormHelperText error={!isValid['user']}>
+          {isValid['user'] ? '' : 'E-Mail invalido'}
         </FormHelperText>
       </Box>
       <Box>
@@ -58,6 +61,19 @@ export const LoginForm = ({ handleAsync }) => {
         <FormHelperText error={!isValid['password']}>
           {isValid['password'] ? '' : 'No puede estar vacio'}
         </FormHelperText>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
+        <Typography color={'text.primary'}>No tienes cuenta?</Typography>{' '}
+        <Typography
+          onClick={() => navigate('/register')}
+          fontWeight={700}
+          sx={{
+            color: '#FF3F98',
+            textDecoration: 'underline',
+            cursor: 'pointer',
+          }}>
+          Registrate
+        </Typography>
       </Box>
 
       <Button

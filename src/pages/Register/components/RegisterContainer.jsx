@@ -5,6 +5,7 @@ import { useMutation } from '@tanstack/react-query';
 import { createUser } from '../../../api/createUser';
 import { LoadingModal } from './LoadingModal';
 export const RegisterContainer = () => {
+  const [message, setMessage] = useState('Cargando...');
   const [open, setOpen] = useState(false);
   const { isError, error, isLoading, mutate, isSuccess } =
     useMutation(createUser);
@@ -15,22 +16,26 @@ export const RegisterContainer = () => {
   };
   useEffect(() => {
     if (isError) {
-      setOpen(false);
+      setMessage(error);
       console.log(error);
     }
     if (isLoading) {
       setOpen(true);
     }
     if (isSuccess) {
-      setOpen(false);
-      navigate('/confirmation');
+      setMessage('Registro exitoso!');
     }
   }, [isError, isLoading, isSuccess]);
 
   return (
     <div>
       <RegisterForm handleAsync={handleAsync} />
-      <LoadingModal open={open} setOpen={setOpen} />
+      <LoadingModal
+        open={open}
+        setOpen={setOpen}
+        message={message}
+        isSuccess={isSuccess}
+      />
     </div>
   );
 };

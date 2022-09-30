@@ -7,7 +7,7 @@ export const useAuth = () => {
   return context;
 };
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState('user');
+  const [user, setUser] = useState(null);
   const authProps = { user, setUser };
   return (
     <authContext.Provider value={authProps}>{children}</authContext.Provider>

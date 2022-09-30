@@ -1,21 +1,31 @@
-import React from 'react';
-import { useQuery } from '@tanstack/react-query';
+import React, { useEffect } from 'react';
 import { getNFTs } from '../../../../api/getNFTs';
 import { NFTList } from './NFTList';
+import { useAsync } from '../../../../hooks/useAsync';
+import { Box } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
 export const NFTContainer = () => {
-  const { isError, error, isLoading, isSuccess, data } = useQuery(
-    ['nfts'],
-    getNFTs,
-  );
-
-  if (isError) {
-    console.log(error);
+  const { status, value, error, execute } = useAsync(() => getNFTs(), false);
+  useEffect(() => {
+    execute();
+  }, []);
+  if (status === 'idle') {
+    return console.log('idle');
   }
-  if (isLoading) {
-    return console.log('loading...');
+  if (status === 'error') {
+    return console.log(error);
   }
-  if (isSuccess) {
+  if (status === 'pending') {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <CircularProgress />
+      </Box>
+    );
   }
-
-  return <NFTList nfts={data} />;
+  return <NFTList nfts={value} />;
 };

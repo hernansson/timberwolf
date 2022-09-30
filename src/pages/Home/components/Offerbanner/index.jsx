@@ -1,13 +1,13 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-
+import banner from '../../../../assets/img/landing/banner_bg.png';
 export const OfferBanner = () => {
   return (
     <Box
       sx={{
-        backgroundImage:
-          'url(https://images.cdn2.stockunlimited.net/preview1300/dark-web-banner-design_1945948.jpg)',
-        backgroundPosition: 'contain',
+        backgroundImage: `url(${banner})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
         height: '120px',
         display: 'flex',
         justifyContent: 'center',

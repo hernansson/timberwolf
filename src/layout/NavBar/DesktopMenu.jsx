@@ -21,12 +21,16 @@ export const DesktopMenu = () => {
           {item.icon}
         </HStack>
       ))}
-      <Button
-        variant="contained"
-        onClick={() => navigate('/login')}
-        sx={{ backgroundColor: '#FF3F98', borderRadius: '8px' }}>
-        Ingresar
-      </Button>
+      {user ? (
+        <Typography color={'text.primary'}>{`Bienvenido Ciclista!`}</Typography>
+      ) : (
+        <Button
+          variant="contained"
+          onClick={() => navigate('/login')}
+          sx={{ backgroundColor: '#FF3F98', borderRadius: '8px' }}>
+          Ingresar
+        </Button>
+      )}
     </HStack>
   );
 };

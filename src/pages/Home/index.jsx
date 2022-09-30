@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import Background from '../../assets/img/landing/background.png';
+import Background from '../../assets/img/landing/background_home.png';
 import { DoubtsBanner } from './components/DoubtsBanner';
 import { Introduction } from './components/Introduction';
 import { NFTBenefitsCard } from './components/NFTBenefitsCard';
@@ -8,7 +8,7 @@ import { NFTSection } from './components/NFTSection';
 import { OfferBanner } from './components/Offerbanner';
 
 export const Home = () => {
-  document.body.style = `background: #1B202A;background-size:cover;background-repeat:no-repeat;background-attachment:fixed`;
+  document.body.style = `background-image: url(${Background});background-size:cover;background-repeat:no-repeat;background-attachment:fixed`;
   return (
     <Box
       sx={{

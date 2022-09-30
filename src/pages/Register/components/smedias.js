@@ -3,14 +3,14 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-const style = { icon: { width: '16px', height: '16px', color: 'white' } };
+const style = { icon: { width: '20px', height: '20px', color: 'white' } };
 export const socialmedias = [
   {
     name: 'facebook',
     icon: <FacebookIcon style={style.icon} />,
-    link: 'https://www.facebook.com/',
+    link: 'https://www.facebook.com/ManzanaPostobonOficial/',
   },
-  {
+  /*{
     name: 'twiter',
     icon: <TwitterIcon style={style.icon} />,
     link: 'https://twitter.com/',
@@ -19,10 +19,10 @@ export const socialmedias = [
     name: 'linkedin',
     icon: <LinkedInIcon style={style.icon} />,
     link: 'https://www.linkedin.com/',
-  },
+  },*/
   {
     name: 'instagram',
     icon: <InstagramIcon style={style.icon} />,
-    link: 'https://www.instagram.com/',
+    link: 'https://www.instagram.com/manzanapostobon/',
   },
 ];

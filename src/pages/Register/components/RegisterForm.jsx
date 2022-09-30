@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   OutlinedInput,
   InputLabel,
@@ -15,26 +15,29 @@ export const RegisterForm = ({ handleAsync }) => {
   const [userForm, setUserForm] = useState('');
   const [isValid, setIsValid] = useState({
     name: false,
-    email: false,
-    phone: false,
+    user: false,
+    password: false,
+    passwordVerify: false,
     tos: false,
   });
   const [openModal, setOpenModal] = useState(false);
   const handleChange = e => {
-    let isOk;
-    if (e.target.checked) {
-      isOk = true;
-    } else {
-      isOk = !!validations[e.target.name](e.target.value);
-    }
-
+    const isOk = !!validations[e.target.name](e.target.value);
     setIsValid({ ...isValid, [e.target.name]: isOk });
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
   };
+  const compareText = (t1, t2) => {
+    setIsValid({ ...isValid, ['passwordVerify']: t1 === t2 });
+  };
+  const handleCheck = e => {
+    setIsValid({ ...isValid, [e.target.name]: e.target.checked });
+  };
 
+  const isAllValid = useCallback(() => {
+    return Object.values(isValid).every(a => a === true);
+  }, [isValid]);
   const onRegister = () => {
-    const isAllValid = Object.values(isValid).every(a => a === true);
-    if (isAllValid) {
+    if (isAllValid()) {
       handleAsync(userForm);
     }
   };
@@ -59,36 +62,51 @@ export const RegisterForm = ({ handleAsync }) => {
           E-Mail:
         </InputLabel>
         <OutlinedInput
-          name="email"
+          name="user"
           fullWidth
           onChange={handleChange}
           sx={{ borderRadius: '8px' }}
         />
-        <FormHelperText error={!isValid['email']}>
-          {isValid['email'] ? '' : 'E-Mail Invalido'}
+        <FormHelperText error={!isValid['user']}>
+          {isValid['user'] ? '' : 'E-Mail Invalido'}
         </FormHelperText>
       </Box>
       <Box>
         <InputLabel shrink sx={{ fontWeight: 700, color: '#FDFDFD' }}>
-          Celular:
+          Contraseña:
         </InputLabel>
         <OutlinedInput
-          type="number"
-          name="phone"
+          name="password"
           fullWidth
           onChange={handleChange}
           sx={{
             borderRadius: '8px',
           }}
         />
-        <FormHelperText error={!isValid['phone']}>
-          {isValid['phone'] ? '' : 'Celular invalido'}
+        <FormHelperText error={!isValid['password']}>
+          {isValid['password'] ? '' : 'La contraseña debe ser mayor a 6 letras'}
+        </FormHelperText>
+      </Box>
+      <Box>
+        <InputLabel shrink sx={{ fontWeight: 700, color: '#FDFDFD' }}>
+          Repite la contraseña:
+        </InputLabel>
+        <OutlinedInput
+          name="passwordVerify"
+          fullWidth
+          onChange={e => compareText(e.target.value, userForm.password)}
+          sx={{
+            borderRadius: '8px',
+          }}
+        />
+        <FormHelperText error={!isValid['passwordVerify']}>
+          {isValid['passwordVerify'] ? '' : 'Deben coincidir las contraseñas'}
         </FormHelperText>
       </Box>
       <Box>
         <FormControlLabel
           name="tos"
-          onChange={handleChange}
+          onChange={handleCheck}
           sx={{
             '.MuiFormControlLabel-label': {
               color: 'text.primary',
@@ -106,6 +124,7 @@ export const RegisterForm = ({ handleAsync }) => {
       </Box>
 
       <Button
+        disabled={!isAllValid()}
         variant="contained"
         sx={{ borderRadius: '8px', padding: 1.5 }}
         onClick={onRegister}>

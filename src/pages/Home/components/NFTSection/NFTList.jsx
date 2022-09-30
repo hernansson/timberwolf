@@ -12,7 +12,7 @@ export const NFTList = ({ nfts }) => {
         justifyContent: { md: 'flex-start', xs: 'center' },
       }}>
       {nfts.map(nft => (
-        <NFTCard price={nft.price} img={nft.img} />
+        <NFTCard price={nft.current_value} img={nft.image} id={nft.id} />
       ))}
     </Box>
   );

@@ -9,8 +9,9 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { numberWithDots } from '../../../utils/numberWithDots';
-export const NFTContent = ({ img, price = 500000, nextprice = 650000 }) => {
-  const [age, setAge] = useState(nextprice);
+export const NFTContent = ({ img, price, nextprice }) => {
+  const [current, setCurrent] = useState(nextprice);
+
   return (
     <Box
       sx={{
@@ -21,8 +22,8 @@ export const NFTContent = ({ img, price = 500000, nextprice = 650000 }) => {
       <Box sx={{ width: { xs: '100%', md: '50%' } }}>
         <CardMedia
           component={'img'}
-          src={'https://images.wsj.net/im-491398?width=700&height=699'}
-          sx={{ borderRadius: '30px' }}
+          src={img}
+          sx={{ borderRadius: '30px', objectFit: 'contain' }}
         />
       </Box>
 
@@ -73,8 +74,8 @@ export const NFTContent = ({ img, price = 500000, nextprice = 650000 }) => {
               Ofertar
             </Typography>
             <Select
-              value={age}
-              onChange={e => setAge(e.target.value)}
+              value={nextprice}
+              onChange={e => setCurrent(e.target.value)}
               displayEmpty
               sx={{ fontSize: '40px', width: '100%' }}
               defaultValue={nextprice}
@@ -84,18 +85,18 @@ export const NFTContent = ({ img, price = 500000, nextprice = 650000 }) => {
                 value={nextprice}>{`$${numberWithDots(nextprice)}`}</MenuItem>
               <MenuItem
                 sx={{ fontSize: '40px' }}
-                value={nextprice + 100000}>{`$${numberWithDots(
-                nextprice + 100000,
+                value={Number(nextprice) + 100000}>{`$${numberWithDots(
+                Number(nextprice) + 100000,
               )}`}</MenuItem>
               <MenuItem
                 sx={{ fontSize: '40px' }}
-                value={nextprice + 200000}>{`$${numberWithDots(
-                nextprice + 200000,
+                value={Number(nextprice) + 200000}>{`$${numberWithDots(
+                Number(nextprice) + 200000,
               )}`}</MenuItem>
               <MenuItem
                 sx={{ fontSize: '40px' }}
-                value={nextprice + 300000}>{`$${numberWithDots(
-                nextprice + 300000,
+                value={Number(nextprice) + 300000}>{`$${numberWithDots(
+                Number(nextprice) + 300000,
               )}`}</MenuItem>
             </Select>
           </Box>

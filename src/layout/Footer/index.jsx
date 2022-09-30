@@ -10,57 +10,22 @@ export const Footer = () => {
           background: 'rgba( 255, 255, 255, 0.1 )',
           boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
           backdropFilter: 'blur(50.5px )',
-          height: '120px',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 4,
+          flexDirection: 'column',
+          padding: 8,
+          gap: '32px',
         }}>
-        <Box
-          sx={{
-            display: 'flex',
-            width: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: { xs: 'column', md: 'row' },
-            gap: { xs: '16px', md: '64px' },
-          }}>
-          <Box sx={{ width: { xs: '100%', md: '40%' } }}>
-            <CardMedia component={'img'} src={BrandLogo} />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: '100%', md: '70%' },
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px',
-            }}>
-            <Typography fontSize={'12px'} color={'text.primary'}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim
-              libero vitae natoque pulvinar sit sit. Vitae consectetur sed
-              consequat nibh mi ut blandit lorem nascetur. Fermentum quisque sit
-              quis auctor purus. Etiam sed eget.
-            </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Typography>
-                <Typography
-                  component={'span'}
-                  fontWeight={700}
-                  fontSize={'14px'}
-                  color={'text.primary'}>
-                  {`Get in Touch `}
-                </Typography>
-                <Typography
-                  component={'span'}
-                  fontSize={'12px'}
-                  sx={{ color: '#FF66AD', textDecoration: 'underline' }}>
-                  info@NFTPOS.com
-                </Typography>
-              </Typography>
-              <SocialMedias />
-            </Box>
-          </Box>
+        <Box sx={{ width: { xs: '120%', md: '40%' } }}>
+          <CardMedia
+            component={'img'}
+            src={BrandLogo}
+            sx={{ objectFit: 'contain' }}
+          />
         </Box>
+
+        <SocialMedias />
       </Box>
       <Box
         sx={{

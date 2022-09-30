@@ -6,10 +6,10 @@ import { Login } from '../pages/Login';
 import { NFTDetail } from '../pages/NFTDetail';
 
 export const publicRoutes = [
-  { path: '/', component: <Register />, exact: true },
+  { path: '/register', component: <Register />, exact: true },
   { path: '/confirmation', component: <Confirmation />, exact: true },
-  { path: '*', component: <Register />, exact: true },
-  { path: '/home', component: <Home />, exact: true },
+  { path: '*', component: <Home />, exact: true },
+  { path: '/', component: <Home />, exact: true },
   { path: '/login', component: <Login />, exact: true },
-  { path: '/nft', component: <NFTDetail />, exact: true },
+  { path: '/nft/:id', component: <NFTDetail />, exact: true },
 ];

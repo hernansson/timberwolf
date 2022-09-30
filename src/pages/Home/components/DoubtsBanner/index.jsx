@@ -1,12 +1,17 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import banner from '../../../../assets/img/landing/banner_bg.png';
 export const DoubtsBanner = () => {
   return (
     <Box
       sx={{
-        backgroundImage:
-          'url(https://images.cdn2.stockunlimited.net/preview1300/dark-web-banner-design_1945948.jpg)',
-        backgroundPosition: 'contain',
+        background:
+          'linear-gradient(76.06deg, rgba(234, 233, 233, 0.132) -4.84%, rgba(128, 128, 128, 0.0855) -4.83%)',
+        boxShadow: '63px 58px 77px rgba(0, 0, 0, 0.58)',
+        backdropFilter: 'blur(49.5px )',
+        //backgroundImage: `url(${banner})`,
+        //backgroundSize: 'cover',
+        //backgroundRepeat: 'no-repeat',
         height: '120px',
         display: 'flex',
         justifyContent: 'center',
