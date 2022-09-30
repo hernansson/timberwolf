@@ -134,12 +134,9 @@ export const RegisterForm = ({ handleAsync }) => {
               color: 'text.primary',
               fontWeight: 500,
               fontSize: '10px',
-              textDecoration:
-                isValid['tos'] || isFirstEntry['tos'] ? 'none' : 'underline',
-              textDecorationColor:
-                isValid['tos'] || isFirstEntry['tos'] ? 'none' : 'red',
-              textDecorationThickness:
-                isValid['tos'] || isFirstEntry['tos'] ? 'none' : '2px',
+              textDecoration: isValid['tos'] ? 'none' : 'underline',
+              textDecorationColor: isValid['tos'] ? 'none' : 'red',
+              textDecorationThickness: isValid['tos'] ? 'none' : '2px',
             },
           }}
           control={<Checkbox />}
