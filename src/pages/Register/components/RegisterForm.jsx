@@ -21,7 +21,18 @@ export const RegisterForm = ({ handleAsync }) => {
     tos: false,
   });
   const [openModal, setOpenModal] = useState(false);
+  const [isFirstEntry, setIsFirstEntry] = useState({
+    name: true,
+    user: true,
+    password: true,
+    passwordVerify: true,
+    tos: true,
+  });
+
   const handleChange = e => {
+    if (isFirstEntry[e.target.name]) {
+      setIsFirstEntry(prev => ({ ...prev, [e.target.name]: false }));
+    }
     const isOk = !!validations[e.target.name](e.target.value);
     setIsValid({ ...isValid, [e.target.name]: isOk });
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
@@ -53,9 +64,11 @@ export const RegisterForm = ({ handleAsync }) => {
           onChange={handleChange}
           sx={{ borderRadius: '8px' }}
         />
-        <FormHelperText error={!isValid['name']}>
-          {isValid['name'] ? '' : 'Tu nombre no puede estar vacio'}
-        </FormHelperText>
+        {!isFirstEntry['name'] && (
+          <FormHelperText error={!isValid['name']}>
+            {isValid['name'] ? '' : 'Tu nombre no puede estar vacio'}
+          </FormHelperText>
+        )}
       </Box>
       <Box>
         <InputLabel shrink sx={{ fontWeight: 700, color: '#FDFDFD' }}>
@@ -67,9 +80,11 @@ export const RegisterForm = ({ handleAsync }) => {
           onChange={handleChange}
           sx={{ borderRadius: '8px' }}
         />
-        <FormHelperText error={!isValid['user']}>
-          {isValid['user'] ? '' : 'E-Mail Invalido'}
-        </FormHelperText>
+        {!isFirstEntry['user'] && (
+          <FormHelperText error={!isValid['user']}>
+            {isValid['user'] ? '' : 'E-Mail Invalido'}
+          </FormHelperText>
+        )}
       </Box>
       <Box>
         <InputLabel shrink sx={{ fontWeight: 700, color: '#FDFDFD' }}>
@@ -83,9 +98,13 @@ export const RegisterForm = ({ handleAsync }) => {
             borderRadius: '8px',
           }}
         />
-        <FormHelperText error={!isValid['password']}>
-          {isValid['password'] ? '' : 'La contraseña debe ser mayor a 6 letras'}
-        </FormHelperText>
+        {!isFirstEntry['password'] && (
+          <FormHelperText error={!isValid['password']}>
+            {isValid['password']
+              ? ''
+              : 'La contraseña debe ser mayor a 6 letras'}
+          </FormHelperText>
+        )}
       </Box>
       <Box>
         <InputLabel shrink sx={{ fontWeight: 700, color: '#FDFDFD' }}>
@@ -99,9 +118,12 @@ export const RegisterForm = ({ handleAsync }) => {
             borderRadius: '8px',
           }}
         />
-        <FormHelperText error={!isValid['passwordVerify']}>
-          {isValid['passwordVerify'] ? '' : 'Deben coincidir las contraseñas'}
-        </FormHelperText>
+
+        {!isFirstEntry['passwordVerify'] && (
+          <FormHelperText error={!isValid['passwordVerify']}>
+            {isValid['passwordVerify'] ? '' : 'Deben coincidir las contraseñas'}
+          </FormHelperText>
+        )}
       </Box>
       <Box>
         <FormControlLabel
@@ -112,9 +134,12 @@ export const RegisterForm = ({ handleAsync }) => {
               color: 'text.primary',
               fontWeight: 500,
               fontSize: '10px',
-              textDecoration: isValid['tos'] ? 'none' : 'underline',
-              textDecorationColor: isValid['tos'] ? 'none' : 'red',
-              textDecorationThickness: isValid['tos'] ? 'none' : '2px',
+              textDecoration:
+                isValid['tos'] || isFirstEntry['tos'] ? 'none' : 'underline',
+              textDecorationColor:
+                isValid['tos'] || isFirstEntry['tos'] ? 'none' : 'red',
+              textDecorationThickness:
+                isValid['tos'] || isFirstEntry['tos'] ? 'none' : '2px',
             },
           }}
           control={<Checkbox />}

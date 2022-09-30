@@ -29,7 +29,6 @@ export const Layout = ({ children }) => {
           <Box
             sx={{
               marginTop: isMd ? '40px' : '80px',
-              marginBottom: isMd ? '40px' : '80px',
             }}>
             {children}
           </Box>

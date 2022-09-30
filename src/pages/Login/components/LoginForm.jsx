@@ -19,8 +19,15 @@ export const LoginForm = ({ handleAsync }) => {
     password: false,
     user: false,
   });
+  const [isFirstEntry, setIsFirstEntry] = useState({
+    password: true,
+    user: true,
+  });
 
   const handleChange = e => {
+    if (isFirstEntry[e.target.name]) {
+      setIsFirstEntry(prev => ({ ...prev, [e.target.name]: false }));
+    }
     const isOk = !!validations[e.target.name](e.target.value);
     setIsValid({ ...isValid, [e.target.name]: isOk });
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
@@ -44,9 +51,11 @@ export const LoginForm = ({ handleAsync }) => {
           onChange={handleChange}
           sx={{ borderRadius: '8px' }}
         />
-        <FormHelperText error={!isValid['user']}>
-          {isValid['user'] ? '' : 'E-Mail invalido'}
-        </FormHelperText>
+        {!isFirstEntry['user'] && (
+          <FormHelperText error={!isValid['user']}>
+            {isValid['user'] ? '' : 'E-Mail invalido'}
+          </FormHelperText>
+        )}
       </Box>
       <Box>
         <InputLabel shrink sx={{ fontWeight: 700, color: '#FDFDFD' }}>
@@ -58,9 +67,11 @@ export const LoginForm = ({ handleAsync }) => {
           onChange={handleChange}
           sx={{ borderRadius: '8px' }}
         />
-        <FormHelperText error={!isValid['password']}>
-          {isValid['password'] ? '' : 'No puede estar vacio'}
-        </FormHelperText>
+        {!isFirstEntry['password'] && (
+          <FormHelperText error={!isValid['password']}>
+            {isValid['password'] ? '' : 'No puede estar vacio'}
+          </FormHelperText>
+        )}
       </Box>
       <Box sx={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
         <Typography color={'text.primary'}>No tienes cuenta?</Typography>{' '}

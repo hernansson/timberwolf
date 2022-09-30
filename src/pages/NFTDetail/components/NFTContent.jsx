@@ -74,7 +74,7 @@ export const NFTContent = ({ img, price, nextprice }) => {
               Ofertar
             </Typography>
             <Select
-              value={nextprice}
+              value={current}
               onChange={e => setCurrent(e.target.value)}
               displayEmpty
               sx={{ fontSize: '40px', width: '100%' }}
