@@ -13,6 +13,7 @@ export const Register = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: { md: '40px', xs: '80px' },
       }}>
       <Box sx={styles.mainContainer}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
