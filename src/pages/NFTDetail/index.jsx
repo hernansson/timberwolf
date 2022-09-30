@@ -11,6 +11,7 @@ export const NFTDetail = () => {
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
+        marginBottom: { md: '40px', xs: '80px' },
       }}>
       <Box
         sx={{
