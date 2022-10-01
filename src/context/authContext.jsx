@@ -1,5 +1,4 @@
-import { createContext, useContext, useState } from 'react';
-
+import { createContext, useContext, useState, useRef } from 'react';
 const authContext = createContext();
 export const useAuth = () => {
   const context = useContext(authContext);
@@ -7,8 +6,17 @@ export const useAuth = () => {
   return context;
 };
 export const AuthProvider = ({ children }) => {
+  const nftSectionRef = useRef();
   const [user, setUser] = useState(null);
-  const authProps = { user, setUser };
+  const [isOfferActive, setIsOfferActive] = useState(false);
+
+  const authProps = {
+    user,
+    setUser,
+    nftSectionRef,
+    isOfferActive,
+    setIsOfferActive,
+  };
   return (
     <authContext.Provider value={authProps}>{children}</authContext.Provider>
   );

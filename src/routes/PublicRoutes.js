@@ -4,6 +4,7 @@ import { Confirmation } from '../pages/Confirmation';
 import { Home } from '../pages/Home';
 import { Login } from '../pages/Login';
 import { NFTDetail } from '../pages/NFTDetail';
+import { Faqs } from '../pages/Faqs';
 
 export const publicRoutes = [
   { path: '/register', component: <Register />, exact: true },
@@ -12,4 +13,5 @@ export const publicRoutes = [
   { path: '/', component: <Home />, exact: true },
   { path: '/login', component: <Login />, exact: true },
   { path: '/nft/:id', component: <NFTDetail />, exact: true },
+  { path: '/faqs', component: <Faqs />, exact: true },
 ];

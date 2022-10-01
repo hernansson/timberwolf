@@ -15,10 +15,10 @@ export const Footer = () => {
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
-          padding: 8,
-          gap: '32px',
+          padding: 4,
+          gap: '16px',
         }}>
-        <Box sx={{ width: { xs: '120%', md: '40%' } }}>
+        <Box sx={{ width: { xs: '100%', md: '40%' } }}>
           <CardMedia
             component={'img'}
             src={BrandLogo}

@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { numberWithDots } from '../../../utils/numberWithDots';
+import { OfferButtonContainer } from './OfferButtonContainer';
 export const NFTContent = ({ img, price, nextprice }) => {
   const [current, setCurrent] = useState(nextprice);
 
@@ -100,15 +101,7 @@ export const NFTContent = ({ img, price, nextprice }) => {
               )}`}</MenuItem>
             </Select>
           </Box>
-          <Button
-            variant={'contained'}
-            sx={{
-              backgroundColor: '#FF3F98',
-              height: '48px',
-              borderRadius: '8px',
-            }}>
-            OFERTAR
-          </Button>
+          <OfferButtonContainer offer={current} />
         </Box>
       </Box>
     </Box>

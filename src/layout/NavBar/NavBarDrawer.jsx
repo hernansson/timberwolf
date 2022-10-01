@@ -12,7 +12,13 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import { menu } from './menu';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/authContext';
+import LoginIcon from '@mui/icons-material/Login';
 export const NavBarDrawer = () => {
+  const { setIsOfferActive, nftSectionRef } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -33,27 +39,44 @@ export const NavBarDrawer = () => {
 
   const list = anchor => (
     <Box
-      sx={{ width: 250 }}
+      sx={{
+        width: 250,
+        height: '100%',
+      }}
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}>
       <List>
-        {menu.map((text, index) => (
-          <ListItem key={text.name} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>{text.icon}</ListItemIcon>
-              <ListItemText primary={text.name} />
+        {menu.map((item, index) => (
+          <ListItem key={item.name} disablePadding>
+            <ListItemButton
+              onClick={() => {
+                if (item.name === 'Ofertar 🔥') {
+                  if (
+                    location.pathname === '/' ||
+                    location.pathname === '/home'
+                  ) {
+                    console.log('shoudlscroll');
+                    nftSectionRef.current.scrollIntoView({
+                      behavior: 'smooth',
+                    });
+                  } else {
+                    setIsOfferActive(true);
+                  }
+                }
+                navigate(item.path);
+              }}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['Ingresar'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+            <ListItemButton onClick={() => navigate('/login')}>
+              <ListItemIcon>{<LoginIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -69,6 +92,14 @@ export const NavBarDrawer = () => {
           <MenuIcon sx={{ color: 'white' }} />
         </Button>
         <Drawer
+          PaperProps={{
+            sx: {
+              background:
+                'linear-gradient(76.06deg, rgba(234, 233, 233, 0.132) -4.84%, rgba(128, 128, 128, 0.0855) -4.83%)',
+              boxShadow: '63px 58px 77px rgba(0, 0, 0, 0.58)',
+              backdropFilter: 'blur(49.5px )',
+            },
+          }}
           anchor={'right'}
           open={state['right']}
           onClose={toggleDrawer('right', false)}>

@@ -9,5 +9,5 @@ export const loginUser = async user => {
   };
   const res = await axios.post(`${process.env.REACT_APP_API}/api/login/`, data);
 
-  return res;
+  return res.data;
 };

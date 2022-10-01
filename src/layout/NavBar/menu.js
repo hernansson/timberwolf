@@ -1,15 +1,18 @@
-import WhatshotIcon from '@mui/icons-material/Whatshot';
+import HomeIcon from '@mui/icons-material/Home';
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 export const menu = [
   {
     name: 'Home',
-    icon: '',
+    icon: <HomeIcon />,
     style: { fontWeight: 700, fontStyle: 'italic', cursor: 'pointer' },
     path: '/home',
   },
   {
-    name: 'Ofertar',
-    icon: <WhatshotIcon sx={{ color: 'red' }} />,
+    name: 'Ofertar 🔥',
+    icon: <LocalOfferIcon />,
     style: { cursor: 'pointer' },
+    path: '/home',
   },
-  { name: 'FAQS', icon: '', style: { cursor: 'pointer' } },
+  { name: 'FAQS', icon: <LiveHelpIcon />, style: { cursor: 'pointer' } },
 ];

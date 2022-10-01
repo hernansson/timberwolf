@@ -28,7 +28,7 @@ export const RegisterForm = ({ handleAsync }) => {
     passwordVerify: true,
     tos: true,
   });
-
+  const [passwordVerify, setPasswordVerify] = useState('');
   const handleChange = e => {
     if (isFirstEntry[e.target.name]) {
       setIsFirstEntry(prev => ({ ...prev, [e.target.name]: false }));
@@ -39,6 +39,15 @@ export const RegisterForm = ({ handleAsync }) => {
   };
   const compareText = (t1, t2) => {
     setIsValid({ ...isValid, ['passwordVerify']: t1 === t2 });
+  };
+
+  const passwordCheck = () => {
+    const isEqual = passwordVerify === userForm['password'];
+    console.log(isEqual);
+    setIsValid(prev => ({
+      ...prev,
+      passwordVerify: isEqual,
+    }));
   };
   const handleCheck = e => {
     setIsValid({ ...isValid, [e.target.name]: e.target.checked });
@@ -113,7 +122,10 @@ export const RegisterForm = ({ handleAsync }) => {
         <OutlinedInput
           name="passwordVerify"
           fullWidth
-          onChange={e => compareText(e.target.value, userForm.password)}
+          onChange={e => {
+            compareText(e.target.value, userForm['password']);
+            setIsFirstEntry(prev => ({ ...prev, ['passwordVerify']: false }));
+          }}
           sx={{
             borderRadius: '8px',
           }}
