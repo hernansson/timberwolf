@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   OutlinedInput,
   InputLabel,
-  FormControlLabel,
-  Checkbox,
   Button,
   FormHelperText,
   Typography,
+  InputAdornment,
+  IconButton,
 } from '@mui/material';
 import { Box } from '@mui/system';
 import { VStack } from '../../../components/common';
 import { validations } from './validations';
 import { useNavigate } from 'react-router-dom';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 export const LoginForm = ({ handleAsync }) => {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
   const [userForm, setUserForm] = useState('');
   const [isValid, setIsValid] = useState({
     password: false,
@@ -28,13 +31,15 @@ export const LoginForm = ({ handleAsync }) => {
     if (isFirstEntry[e.target.name]) {
       setIsFirstEntry(prev => ({ ...prev, [e.target.name]: false }));
     }
-    const isOk = !!validations[e.target.name](e.target.value);
+    const isOk = validations[e.target.name](e.target.value);
     setIsValid({ ...isValid, [e.target.name]: isOk });
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
   };
+  const isAllValid = useCallback(() => {
+    return Object.values(isValid).every(a => a === true);
+  }, [isValid]);
 
-  const onRegister = () => {
-    const isAllValid = Object.values(isValid).every(a => a === true);
+  const onLogin = () => {
     if (isAllValid) {
       handleAsync(userForm);
     }
@@ -63,8 +68,20 @@ export const LoginForm = ({ handleAsync }) => {
         </InputLabel>
         <OutlinedInput
           name="password"
+          type={showPassword ? 'text' : 'password'}
+          value={userForm['password']}
           fullWidth
           onChange={handleChange}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={() => setShowPassword(prev => !prev)}
+                edge="end">
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
           sx={{ borderRadius: '8px' }}
         />
         {!isFirstEntry['password'] && (
@@ -88,9 +105,10 @@ export const LoginForm = ({ handleAsync }) => {
       </Box>
 
       <Button
+        disabled={!isAllValid()}
         variant="contained"
         sx={{ borderRadius: '8px', padding: 1.5 }}
-        onClick={onRegister}>
+        onClick={onLogin}>
         Login
       </Button>
     </VStack>

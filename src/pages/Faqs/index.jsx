@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Accordion,
   AccordionSummary,
@@ -13,6 +13,9 @@ import { faqs } from './faqs';
 
 export const Faqs = () => {
   document.body.style = `background-image: url(${Background});background-size:cover;background-repeat:no-repeat;background-attachment:fixed`;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Box
       sx={{
@@ -20,10 +23,26 @@ export const Faqs = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        paddingBottom: '80px',
       }}>
-      <Box sx={{ width: '70%' }}>
-        {faqs.map(faq => (
-          <Accordion defaultExpanded>
+      <Box
+        sx={{
+          width: { md: '70%', xs: '90%' },
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+        }}>
+        {faqs.map((faq, idx) => (
+          <Accordion
+            key={idx}
+            sx={{
+              background:
+                'linear-gradient(76.06deg, rgba(234, 233, 233, 0.132) -4.84%, rgba(128, 128, 128, 0.0855) -4.83%)',
+              boxShadow: '63px 58px 77px rgba(0, 0, 0, 0.58)',
+              backdropFilter: 'blur(49.5px )',
+              borderRadius: '8px',
+              border: '1.82546px solid white',
+            }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <DescriptionOutlinedIcon
                 color="secondary"
@@ -41,13 +60,18 @@ export const Faqs = () => {
               }}>
               <Box
                 sx={{
-                  background: 'rgba(213, 186, 255, 0.08)',
-                  border: '1px solid rgba(213, 186, 255, 0.08)',
-                  borderRadius: '6px',
-                  padding: '0.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
                 }}>
-                {faq.paragraphs.map(e => (
-                  <Typography sx={{ fontSize: '12px', fontWeight: 400 }}>
+                {faq.paragraphs.map((e, idx) => (
+                  <Typography
+                    key={idx}
+                    sx={{
+                      fontSize: '12px',
+                      fontWeight: 500,
+                      lineHeight: '22px',
+                    }}>
                     {e}
                   </Typography>
                 ))}

@@ -11,8 +11,13 @@ export const NFTList = ({ nfts }) => {
         gap: '32px',
         justifyContent: { md: 'flex-start', xs: 'center' },
       }}>
-      {nfts.map(nft => (
-        <NFTCard price={nft.current_value} img={nft.image} id={nft.id} />
+      {nfts.map((nft, idx) => (
+        <NFTCard
+          key={idx}
+          price={nft.current_value}
+          img={nft.image}
+          id={nft.id}
+        />
       ))}
     </Box>
   );

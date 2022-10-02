@@ -8,15 +8,13 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import { menu } from './menu';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/authContext';
 import LoginIcon from '@mui/icons-material/Login';
 export const NavBarDrawer = () => {
-  const { setIsOfferActive, nftSectionRef } = useAuth();
+  const { setIsOfferActive, nftSectionRef, user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const [state, setState] = React.useState({
@@ -55,7 +53,6 @@ export const NavBarDrawer = () => {
                     location.pathname === '/' ||
                     location.pathname === '/home'
                   ) {
-                    console.log('shoudlscroll');
                     nftSectionRef.current.scrollIntoView({
                       behavior: 'smooth',
                     });
@@ -73,14 +70,15 @@ export const NavBarDrawer = () => {
       </List>
       <Divider />
       <List>
-        {['Ingresar'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => navigate('/login')}>
-              <ListItemIcon>{<LoginIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        {!user &&
+          ['Ingresar'].map((text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton onClick={() => navigate('/login')}>
+                <ListItemIcon>{<LoginIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
       </List>
     </Box>
   );

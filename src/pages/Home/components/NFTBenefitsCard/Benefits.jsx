@@ -23,8 +23,8 @@ export const Benefits = () => {
             fontSize: '16px',
           },
         }}>
-        {benefitList.map(e => (
-          <ListItem>{e}</ListItem>
+        {benefitList.map((e, idx) => (
+          <ListItem key={idx}>{e}</ListItem>
         ))}
       </List>
       <Button

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { LoginForm } from './LoginForm';
-import { useLocation, useNavigate, use } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { loginUser } from '../../../api/loginUser';
 import { LoadingModal } from './LoadingModal';
@@ -29,7 +29,7 @@ export const LoginContainer = () => {
       localStorage.setItem('token', JSON.stringify(data.token));
       setUser(data);
       setOpen(false);
-      navigate(-1);
+      navigate('/');
     }
   }, [isError, isLoading, isSuccess]);
 

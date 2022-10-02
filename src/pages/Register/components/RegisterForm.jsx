@@ -6,8 +6,12 @@ import {
   Checkbox,
   Button,
   FormHelperText,
+  InputAdornment,
+  IconButton,
+  Box,
 } from '@mui/material';
-import { Box } from '@mui/system';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { VStack } from '../../../components/common';
 import { Modal } from './Modal';
 import { validations } from './validations';
@@ -28,7 +32,10 @@ export const RegisterForm = ({ handleAsync }) => {
     passwordVerify: true,
     tos: true,
   });
-  const [passwordVerify, setPasswordVerify] = useState('');
+  const [showPassword, setShowPassword] = useState({
+    password: false,
+    verifyPassword: false,
+  });
   const handleChange = e => {
     if (isFirstEntry[e.target.name]) {
       setIsFirstEntry(prev => ({ ...prev, [e.target.name]: false }));
@@ -38,17 +45,9 @@ export const RegisterForm = ({ handleAsync }) => {
     setUserForm({ ...userForm, [e.target.name]: e.target.value });
   };
   const compareText = (t1, t2) => {
-    setIsValid({ ...isValid, ['passwordVerify']: t1 === t2 });
+    setIsValid({ ...isValid, passwordVerify: t1 === t2 });
   };
 
-  const passwordCheck = () => {
-    const isEqual = passwordVerify === userForm['password'];
-    console.log(isEqual);
-    setIsValid(prev => ({
-      ...prev,
-      passwordVerify: isEqual,
-    }));
-  };
   const handleCheck = e => {
     setIsValid({ ...isValid, [e.target.name]: e.target.checked });
   };
@@ -100,6 +99,22 @@ export const RegisterForm = ({ handleAsync }) => {
           Contraseña:
         </InputLabel>
         <OutlinedInput
+          type={showPassword['password'] ? 'text' : 'password'}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={() =>
+                  setShowPassword(prev => ({
+                    ...showPassword,
+                    password: !showPassword['password'],
+                  }))
+                }
+                edge="end">
+                {showPassword['password'] ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
           name="password"
           fullWidth
           onChange={handleChange}
@@ -120,11 +135,31 @@ export const RegisterForm = ({ handleAsync }) => {
           Repite la contraseña:
         </InputLabel>
         <OutlinedInput
+          type={showPassword['verifyPassword'] ? 'text' : 'password'}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={() =>
+                  setShowPassword(prev => ({
+                    ...showPassword,
+                    verifyPassword: !showPassword['verifyPassword'],
+                  }))
+                }
+                edge="end">
+                {showPassword['verifyPassword'] ? (
+                  <VisibilityOff />
+                ) : (
+                  <Visibility />
+                )}
+              </IconButton>
+            </InputAdornment>
+          }
           name="passwordVerify"
           fullWidth
           onChange={e => {
             compareText(e.target.value, userForm['password']);
-            setIsFirstEntry(prev => ({ ...prev, ['passwordVerify']: false }));
+            setIsFirstEntry(prev => ({ ...prev, passwordVerify: false }));
           }}
           sx={{
             borderRadius: '8px',

@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import React, { useEffect } from 'react';
 import Background from '../../assets/img/landing/background_home.png';
 import { useAuth } from '../../context/authContext';
@@ -16,6 +16,8 @@ export const Home = () => {
     if (isOfferActive) {
       nftSectionRef.current.scrollIntoView({ behavior: 'smooth' });
       setIsOfferActive(false);
+    } else {
+      window.scrollTo(0, 0);
     }
   }, []);
   return (
@@ -33,7 +35,7 @@ export const Home = () => {
         <NFTBenefitsCard />
       </Box>
       <OfferBanner />
-      <Box sx={{ width: '80%' }} ref={nftSectionRef}>
+      <Box sx={{ width: '80%' }}>
         <NFTSection />
       </Box>
       <DoubtsBanner />

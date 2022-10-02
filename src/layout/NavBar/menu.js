@@ -14,5 +14,10 @@ export const menu = [
     style: { cursor: 'pointer' },
     path: '/home',
   },
-  { name: 'FAQS', icon: <LiveHelpIcon />, style: { cursor: 'pointer' } },
+  {
+    name: 'FAQS',
+    icon: <LiveHelpIcon />,
+    style: { cursor: 'pointer' },
+    path: '/faqs',
+  },
 ];

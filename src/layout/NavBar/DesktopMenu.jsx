@@ -11,8 +11,8 @@ export const DesktopMenu = () => {
 
   return (
     <HStack sx={{ gap: '36px', alignItems: 'center' }}>
-      {menu.map(item => (
-        <HStack sx={{ gap: '8px' }}>
+      {menu.map((item, idx) => (
+        <HStack sx={{ gap: '8px' }} key={idx}>
           <Typography
             color={'text.primary'}
             sx={item.style}

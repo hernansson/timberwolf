@@ -39,4 +39,75 @@ export const faqs = [
       'Las subastas son un procedimiento de venta en competencia directa y (normalmente) pública, en el que los interesados por un determinado bien o servicio presentan sus ofertas o pujas, es decir, el dinero que están dispuestos a pagar por el objeto de la subasta. El vendedor marca un precio de salida, por debajo del que se rechaza cualquier puja, y al final de la subasta acepta la oferta del comprador que ha presentado la opción más competitiva.',
     ],
   },
+  {
+    title: '¿Cómo hago el pago de mi “puja” u oferta?',
+    paragraphs: [
+      'Una vez hayas elegido el NFT que quieres tener, das click en el botón “ofertar”.Allí la plataforma te pedirá algunos datos personales y también los de tu tarjeta débito o crédito. Al aceptar hacer la oferta, autorizas que la plataforma de pago debite de tu tarjeta el valor que ofreciste por el NFT.',
+      'Si deseas ofertar nuevamente al mismo NFT, debes volver a hacer el mismo procedimiento, pero en este caso, la plataforma debitará únicamente el excedente del valor que tenias anteriormente con respecto a la nueva puja. ',
+      'En el momento que se cierre la subasta, se dará por terminada la opción de nuevas ofertas, y en ese momento quien haya ofertado más dinero será el ganador, por ende, se descontará el dinero de su tarjeta.',
+      'Las demás personas que participaron, pero no ganaron, recibirán la devolución de su dinero 2 ó 3 días hábiles después de cerrarse la subasta.',
+    ],
+  },
+  {
+    title: '¿Cómo puedo revertir mi oferta?',
+    paragraphs: [
+      'Una vez hayas ofertado, aceptado los términos de la subasta y reafirmado tu decisión, el dinero será debitado de tu cuenta. Cuando esto suceda, no podrás revertir tu oferta. En caso de que alguien oferte después de ti, retornaremos tu dinero 2 o 3 días hábiles después de que se cierre la subasta.',
+    ],
+  },
+  {
+    title: '¿Qué pasa con mi dinero mientras esté dentro de una oferta?',
+    paragraphs: [
+      'En el caso de haber hecho una oferta en alguno de los NFTS, debiste haber ingresado anteriormente los datos de tu tarjeta de crédito.Mientras estés dentro de nuestra subasta con un precio ya ofertado, este valor queda debitado de tu cuenta',
+      'En el momento que se cierre la subasta, se dará por terminada la opción de nuevas ofertas, y en ese momento quien haya ofertado más dinero será el ganador, por ende, se descontará el dinero de su tarjeta.',
+      'Las demás personas que participaron, pero no ganaron, recibirán la devolución de su dinero 2 ó 3 días hábiles después de cerrarse la subasta.',
+    ],
+  },
+  {
+    title: '¿Qué datos debo entregar para subastar?',
+    paragraphs: [
+      'Nombre completo, e-mail, celular, número de tarjeta, CVC, Nombre de la tarjeta y País/Ciudad.',
+    ],
+  },
+  {
+    title: '¿En qué moneda puedo ofertar?',
+    paragraphs: [
+      'Para esta actividad vamos a subastar en pesos colombianos (COP), pero puedes tener una tarjeta de crédito internacional habilitada para usar en el país.',
+    ],
+  },
+  {
+    title: 'Vigencia de la subasta',
+    paragraphs: [
+      'La subasta comienza el 4 de octubre y finaliza a la media noche del 10 del mismo mes de 2022. Si llegase a presentar algún cambio de fecha, esta será notificada a quienes ya estén registrados por medio de e-mail.',
+    ],
+  },
+  {
+    title: '¿Quiénes pueden subastar?',
+    paragraphs: [
+      'Cualquier persona, mayor de edad, que tenga una tarjeta crédito o débito con código de seguridad, y que tenga el cupo suficiente para respaldar la oferta.',
+    ],
+  },
+  {
+    title: '¿Qué pasa si me gano la subasta del NFT?',
+    paragraphs: [
+      'A tu correo te llega un mensaje de confirmación en el cual te indicamos los pasos a seguir. Una persona de nuestro equipo te contactará para informarte qué debes hacer.',
+    ],
+  },
+  {
+    title: '¿Qué pasa si gané la subasta, y no me llega ningún correo?',
+    paragraphs: [
+      'En el caso de haber sido el ganador de la subasta y no recibiste un correo, revisa la carpeta de correos no deseados o SPAM. Y si no lo tienes ahí, escribe a este correo xxxxxxxxx incluyendo tus datos para confirmar que fuiste el ganador.',
+    ],
+  },
+  {
+    title: '¿Cuándo oferto, qué pasa?',
+    paragraphs: [
+      'Cada vez que realices una nueva oferta, recibirás en tu correo un mensaje con el comprobante de la puja.',
+    ],
+  },
+  {
+    title: '¿Cómo sé si mi puja va de primera o si alguien ofertó más?',
+    paragraphs: [
+      'Cada vez que alguien realice una nueva oferta después de la tuya, recibirás una alerta en tu correo con un mensaje indicando la nueva puja, así sabrás que alguien más está ofreciendo más dinero por el NFT.',
+    ],
+  },
 ];
