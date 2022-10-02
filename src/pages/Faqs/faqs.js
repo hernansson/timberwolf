@@ -35,7 +35,8 @@ export const faqs = [
   },
   {
     title: '¿Qué es una subasta?',
-    paragraphs:
+    paragraphs: [
       'Las subastas son un procedimiento de venta en competencia directa y (normalmente) pública, en el que los interesados por un determinado bien o servicio presentan sus ofertas o pujas, es decir, el dinero que están dispuestos a pagar por el objeto de la subasta. El vendedor marca un precio de salida, por debajo del que se rechaza cualquier puja, y al final de la subasta acepta la oferta del comprador que ha presentado la opción más competitiva.',
+    ],
   },
 ];
