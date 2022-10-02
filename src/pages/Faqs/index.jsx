@@ -50,7 +50,15 @@ export const Faqs = () => {
               borderRadius: '8px',
               border: '1.82546px solid white',
             }}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <AccordionSummary
+              sx={{
+                height: '62px',
+                alignItems: 'center',
+                '& .MuiAccordionSummary-content': {
+                  alignItems: 'center',
+                },
+              }}
+              expandIcon={<ExpandMoreIcon />}>
               <DescriptionOutlinedIcon
                 color="secondary"
                 sx={{ marginRight: 2 }}
