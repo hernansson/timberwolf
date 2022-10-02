@@ -32,6 +32,13 @@ export const Faqs = () => {
           flexDirection: 'column',
           gap: '16px',
         }}>
+        <Typography
+          fontSize={'25px'}
+          fontWeight={700}
+          color={'text.primary'}
+          pb={'16px'}>
+          Frequently Asked Questions (FAQs)
+        </Typography>
         {faqs.map((faq, idx) => (
           <Accordion
             key={idx}
