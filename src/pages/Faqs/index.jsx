@@ -52,7 +52,7 @@ export const Faqs = () => {
             }}>
             <AccordionSummary
               sx={{
-                height: '62px',
+                minHeight: '62px',
                 alignItems: 'center',
                 '& .MuiAccordionSummary-content': {
                   alignItems: 'center',
