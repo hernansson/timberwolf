@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import React from 'react';
 import { WelcomeMedia } from './WelcomeMedia';
 import { WelcomeText } from './WelcomeText';
-
+import { ModalStepper } from '../ModalStepper';
 export const Introduction = () => {
   return (
     <Box
@@ -17,7 +17,9 @@ export const Introduction = () => {
           alignItems: 'center',
         }}>
         <WelcomeText />
+        <ModalStepper />
       </Box>
+
       <Box
         sx={{
           width: { xs: '100%', md: '58%' },

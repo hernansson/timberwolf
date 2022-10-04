@@ -24,17 +24,12 @@ export const OfferBanner = () => {
           flexDirection: { xs: 'column', md: 'row' },
           gap: { xs: '16px', md: '64px' },
         }}>
-        <Typography fontWeight={700} fontSize={'24px'} color={'text.primary'}>
-          OFERTAS
-        </Typography>
         <Box>
-          <Typography fontSize={'12px'} color={'text.primary'}>
-            Estás a 1 click de ofertar y llevarte uno de los 10 NFTS que incluye
-            beneficios que no te querrás perder.
-          </Typography>
-          <Typography fontSize={'12px'} color={'text.primary'}>
-            Elije el o los NFT`S que más te gusten, oferta en COP y vive una de
-            las mejores experiencias de tu vida
+          <Typography
+            fontSize={'36px'}
+            color={'text.primary'}
+            textAlign={'center'}>
+            ¡Ahora sí! Llegó la hora de sacar el sprinter que llevas dentro
           </Typography>
         </Box>
       </Box>

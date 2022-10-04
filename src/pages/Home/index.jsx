@@ -35,7 +35,7 @@ export const Home = () => {
         <NFTBenefitsCard />
       </Box>
       <OfferBanner />
-      <Box sx={{ width: '80%' }}>
+      <Box sx={{ width: '80%' }} ref={nftSectionRef}>
         <NFTSection />
       </Box>
       <DoubtsBanner />

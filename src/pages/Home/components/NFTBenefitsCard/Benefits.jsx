@@ -1,7 +1,9 @@
 import { Box, Typography, List, ListItem, Button } from '@mui/material';
 import React from 'react';
 import { benefitList } from './benefitList';
+import { useAuth } from '../../../../context/authContext';
 export const Benefits = () => {
+  const { nftSectionRef } = useAuth();
   return (
     <Box
       sx={{
@@ -28,9 +30,16 @@ export const Benefits = () => {
         ))}
       </List>
       <Button
+        onClick={() =>
+          nftSectionRef.current.scrollIntoView({ behavior: 'smooth' })
+        }
         variant="contained"
-        sx={{ backgroundColor: '#FF3F98', borderRadius: '8px' }}>
-        Saber mas
+        sx={{
+          backgroundColor: '#FF3F98',
+          borderRadius: '8px',
+          fontSize: '28px',
+        }}>
+        ¡Me animo a ofertar!
       </Button>
     </Box>
   );
