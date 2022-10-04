@@ -32,8 +32,8 @@ export const WelcomeText = () => {
           fontSize={'12px'}
           fontWeight={800}
           sx={{ color: '#DADADA' }}>
-          Ahora tienes la llave para que no te pierdas la carrera de ciclismo
-          más esperada del año en Colombia.
+          Estás a un pedalazo de la meta para que no te pierdas la carrera de
+          ciclismo más esperada del año en Colombia.
         </Typography>
         <Typography
           fontSize={'12px'}
@@ -46,13 +46,13 @@ export const WelcomeText = () => {
             sx={{
               color: '#DADADA',
             }}>
-            Junto con Rigo subastaremos
+            Junto con Rigo
           </Typography>
           <Typography
             component={'span'}
             fontSize={'12px'}
             fontWeight={800}
-            sx={{ color: '#FE59BC' }}>{` 10 NFT'S `}</Typography>
+            sx={{ color: '#FE59BC' }}>{` subastaremos 10 NFT'S  `}</Typography>
           <Typography
             component={'span'}
             fontSize={'12px'}

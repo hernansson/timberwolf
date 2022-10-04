@@ -14,5 +14,5 @@ export const bidNFT = async bid => {
     data,
   );
 
-  return res;
+  return await res.data;
 };

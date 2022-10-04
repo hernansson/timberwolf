@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { bidNFT } from '../../../api/bidNFT';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Button, FormControl } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { LoadingModal } from './LoadingModal';
 import { useAuth } from '../../../context/authContext';
+
 export const OfferButtonContainer = ({ offer }) => {
   const { id } = useParams();
   const { isError, error, isLoading, mutate, isSuccess, data } =
@@ -21,6 +22,7 @@ export const OfferButtonContainer = ({ offer }) => {
     };
     mutate(data);
   };
+
   useEffect(() => {
     if (isError) {
       setMessage('Ha ocurrido un error, vuelva a intentarlo');
@@ -32,28 +34,57 @@ export const OfferButtonContainer = ({ offer }) => {
     }
     if (isSuccess) {
       setMessage('Puja realizada satisfactoriamente');
+      document.getElementById('factura').value = Number(data.id_factura);
+      document.getElementById('valor').value = Number(data.value);
+      document.getElementById('myForm').submit();
       //navigate('/');
     }
   }, [isError, isLoading, isSuccess]);
   return (
     <>
-      <LoadingModal
-        message={message}
-        open={open}
-        setOpen={setOpen}
-        isSuccess={isSuccess}
-      />
+      <LoadingModal message={message} open={open} setOpen={setOpen} />
       {user ? (
-        <Button
-          onClick={handleAsync}
-          variant={'contained'}
-          sx={{
-            backgroundColor: '#FF3F98',
-            height: '48px',
-            borderRadius: '8px',
-          }}>
-          OFERTAR
-        </Button>
+        <>
+          <form
+            id="myForm"
+            method="POST"
+            action="https://demover3-1.tucompra.net/tc/app/inputs/compra.jsp">
+            <input name="factura" id="factura" type="hidden" value={''} />
+            <input name="valor" id="valor" type="hidden" value={''} />
+            <input
+              name="descripcionFactura"
+              id="descripcionFactura"
+              type="hidden"
+              value={`${id} NFT`}
+            />
+            <input name="usuario" type="hidden" value="y44hkqk1z194g908" />
+            <Button
+              onClick={handleAsync}
+              variant={'contained'}
+              // type={'submit'}
+              sx={{
+                width: '100%',
+                backgroundColor: '#FF3F98',
+                height: '48px',
+                borderRadius: '8px',
+              }}>
+              OFERTAR
+            </Button>{' '}
+          </form>
+
+          {/*
+            <Button
+              onClick={handleAsync}
+              variant={'contained'}
+              sx={{
+                backgroundColor: '#FF3F98',
+                height: '48px',
+                borderRadius: '8px',
+              }}>
+              OFERTAR
+            </Button>
+            */}
+        </>
       ) : (
         <Button
           variant={'contained'}

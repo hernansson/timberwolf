@@ -8,7 +8,7 @@ import { Faqs } from '../pages/Faqs';
 
 export const publicRoutes = [
   { path: '/register', component: <Register />, exact: true },
-  { path: '/confirmation', component: <Confirmation />, exact: true },
+  { path: '/confirmation/', component: <Confirmation />, exact: true },
   { path: '*', component: <Home />, exact: true },
   { path: '/', component: <Home />, exact: true },
   { path: '/login', component: <Login />, exact: true },
