@@ -52,6 +52,7 @@ export const faqs = [
     title: '¿Cómo puedo revertir mi oferta?',
     paragraphs: [
       'Una vez hayas ofertado, aceptado los términos de la subasta y reafirmado tu decisión, el dinero será debitado de tu cuenta. Cuando esto suceda, no podrás revertir tu oferta. En caso de que alguien oferte después de ti, retornaremos tu dinero 2 o 3 días hábiles después de que se cierre la subasta.',
+      'Si tu caso es de fuerza mayor, por favor envíanos un correo a desarrollo@aspis-consulting.com con tus datos, y cuéntanos tu caso. Así podremos ayudarte.',
     ],
   },
   {
@@ -69,6 +70,13 @@ export const faqs = [
     ],
   },
   {
+    title: '¿Cuándo y cómo me entregan los beneficios?',
+    paragraphs: [
+      'Una vez se haya cerrado la subasta, nos pondremos en contacto con los ganadores y les indicaremos los pasos a seguir para la entrega del NFT y sus beneficios.',
+      'Para la entrega del NFT, programaremos una reunión personalizada con cada uno de los ganadores y allí les indicaremos cómo crear su billetera virtual y le haremos el traspaso de su NFT.',
+    ],
+  },
+  {
     title: '¿En qué moneda puedo ofertar?',
     paragraphs: [
       'Para esta actividad vamos a subastar en pesos colombianos (COP), pero puedes tener una tarjeta de crédito internacional habilitada para usar en el país.',
@@ -77,7 +85,21 @@ export const faqs = [
   {
     title: 'Vigencia de la subasta',
     paragraphs: [
-      'La subasta comienza el 4 de octubre y finaliza a la media noche del 10 del mismo mes de 2022. Si llegase a presentar algún cambio de fecha, esta será notificada a quienes ya estén registrados por medio de e-mail.',
+      'La subasta comienza el 7 de octubre y finaliza a la media noche del 11 del mismo mes de 2022. Si llegase a presentar algún cambio de fecha, esta será notificada a quienes ya estén registrados por medio de e-mail.',
+    ],
+  },
+  {
+    title: '¿Cuál es la base de la subasta?',
+    paragraphs: [
+      'La base inicial de cada uno de los NFT`s con sus beneficios es de $1.000.000.',
+    ],
+  },
+  {
+    title:
+      '¿Cuál es la oferta máxima o mínima que puedo ofrecer en esta subasta?',
+    paragraphs: [
+      'La base de cada subasta es de $1.000.000. A partir de ahí, el monto permitido para ofertar será de $100.000 adelante, tu eliges el valor que quieres ofertar. ',
+      'Ten en cuenta que los montos deben ser cerrados, esto quiere decir que no puedes ofertar sumas menores a $100.000 ni valores que no sean cifras cerradas como por ejemplo $20.530.',
     ],
   },
   {
@@ -95,13 +117,13 @@ export const faqs = [
   {
     title: '¿Qué pasa si gané la subasta, y no me llega ningún correo?',
     paragraphs: [
-      'En el caso de haber sido el ganador de la subasta y no recibiste un correo, revisa la carpeta de correos no deseados o SPAM. Y si no lo tienes ahí, escribe a este correo xxxxxxxxx incluyendo tus datos para confirmar que fuiste el ganador.',
+      'En el caso de haber sido el ganador de la subasta y no recibiste un correo, revisa la carpeta de correos no deseados o SPAM. Y si no lo tienes ahí, escribe a este correo desarrollo@aspis-consulting.com, incluyendo tus datos para confirmar que fuiste el ganador.',
     ],
   },
   {
     title: '¿Cuándo oferto, qué pasa?',
     paragraphs: [
-      'Cada vez que realices una nueva oferta, recibirás en tu correo un mensaje con el comprobante de la puja.',
+      'Cada vez que realices una nueva oferta, recibirás en tu correo un mensaje con el comprobante de la puja. Así sabrás que tu oferta ha sido satisfactoria.',
     ],
   },
   {

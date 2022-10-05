@@ -17,7 +17,6 @@ export const Introduction = () => {
           alignItems: 'center',
         }}>
         <WelcomeText />
-        <ModalStepper />
       </Box>
 
       <Box

@@ -7,32 +7,14 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import { StepOne } from './StepOne';
+import { StepThree } from './StepThree';
+import { StepTwo } from './StepTwo';
 
-const steps = [
-  {
-    label: 'Select campaign settings',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
-  },
-  {
-    label: 'Create an ad group',
-    description:
-      'An ad group contains one or more ads which target a shared set of keywords.',
-  },
-  {
-    label: 'Create an ad',
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
-  },
-];
-
-export const Stepper = () => {
+export const Stepper = ({ setOpen }) => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = steps.length;
+  const maxSteps = 3;
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
@@ -41,50 +23,80 @@ export const Stepper = () => {
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
+  const step = React.useCallback(() => {
+    let myStep;
+    switch (activeStep) {
+      case 0:
+        myStep = <StepOne />;
+        break;
+      case 1:
+        myStep = <StepTwo />;
+        break;
+      case 2:
+        myStep = <StepThree />;
+        break;
+      default:
+        myStep = <StepOne />;
+    }
+    return myStep;
+  }, [activeStep]);
 
   return (
-    <Box sx={{ maxWidth: 600, flexGrow: 1, borderRadius: '30px' }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          pl: 2,
-          bgcolor: 'background.default',
-        }}>
-        <Typography>{steps[activeStep].label}</Typography>
-      </Paper>
-      <Box sx={{ height: 255, maxWidth: 400, width: '100%', p: 2 }}>
-        {steps[activeStep].description}
-      </Box>
+    <Box
+      sx={{
+        maxWidth: 600,
+        flexGrow: 1,
+        borderRadius: '30px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '32px',
+      }}>
+      {step()}
       <MobileStepper
         variant="text"
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
+        sx={{
+          background: 'rgba( 0, 0, 0, 0.2 )',
+          borderRadius: '30px',
+          width: '100%',
+        }}
         nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}>
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
+          activeStep === 2 ? (
+            <Button
+              size="small"
+              onClick={() => setOpen(false)}
+              sx={{ color: 'white' }}>
+              Cerrar
+            </Button>
+          ) : (
+            <Button
+              size="small"
+              onClick={handleNext}
+              sx={{ color: 'white' }}
+              disabled={activeStep === maxSteps - 1}>
+              Siguiente
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          )
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button
+            size="small"
+            onClick={handleBack}
+            sx={{ color: 'white' }}
+            disabled={activeStep === 0}>
             {theme.direction === 'rtl' ? (
               <KeyboardArrowRight />
             ) : (
               <KeyboardArrowLeft />
             )}
-            Back
+            Atras
           </Button>
         }
       />

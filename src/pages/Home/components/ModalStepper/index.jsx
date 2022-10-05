@@ -19,7 +19,10 @@ export const ModalStepper = () => {
 
   return (
     <>
-      <Button variant="contained" onClick={() => setOpen(prev => !prev)}>
+      <Button
+        variant="contained"
+        sx={{ backgroundColor: '#FF3F98', borderRadius: '8px' }}
+        onClick={() => setOpen(prev => !prev)}>
         Pedaleemos a los NFT's
       </Button>
       <Dialog
@@ -30,17 +33,9 @@ export const ModalStepper = () => {
         }}>
         <DialogContent sx={styles.scrollbar}>
           <DialogContentText>
-            <Stepper />
+            <Stepper setOpen={setOpen} />
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button
-            variant="contained"
-            sx={{ backgroundColor: '#FF3F98', borderRadius: '8px' }}
-            onClick={() => {}}>
-            <Typography color={'text.primary'}>Cerrar</Typography>
-          </Button>
-        </DialogActions>
       </Dialog>
     </>
   );

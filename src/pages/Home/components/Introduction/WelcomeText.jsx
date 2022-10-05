@@ -1,6 +1,6 @@
 import { Typography, Box } from '@mui/material';
 import React from 'react';
-
+import { ModalStepper } from '../ModalStepper';
 export const WelcomeText = () => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -67,6 +67,13 @@ export const WelcomeText = () => {
         no tienen posibilidades para desplazarse a sus escuelas, y asi les vamos
         a ayudar para que puedan ir a estudiar.
       </Typography>
+      <Box
+        sx={{
+          alignSelf: { md: 'flex-end', xs: 'center' },
+          paddingTop: '16px',
+        }}>
+        <ModalStepper />
+      </Box>
     </Box>
   );
 };

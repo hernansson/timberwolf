@@ -22,14 +22,14 @@ export const NFTCard = ({ img, price, id }) => {
           border: '1px solid white',
         }}
       />
-      <Typography
-        fontSize={'19px'}
-        color={'text.primary'}>{`$${price}`}</Typography>
+      <Typography fontSize={'19px'} color={'text.primary'}>{`$${price} ${
+        price > 1000000 ? '🔥' : ''
+      }`}</Typography>
       <Button
         variant="contained"
         sx={{ backgroundColor: '#FE59BC' }}
         onClick={() => navigate(`/nft/${id}`)}>
-        OFERTAR
+        {`OFERTAR`}
       </Button>
     </Box>
   );
