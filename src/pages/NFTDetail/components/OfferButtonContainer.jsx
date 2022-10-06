@@ -33,7 +33,7 @@ export const OfferButtonContainer = ({ offer }) => {
       setOpen(true);
     }
     if (isSuccess) {
-      setMessage('Puja realizada satisfactoriamente');
+      setMessage('Redirigiendo a tu compra...');
       document.getElementById('factura').value = Number(data.id_factura);
       document.getElementById('valor').value = Number(data.value);
       document.getElementById('myForm').submit();

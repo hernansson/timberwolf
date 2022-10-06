@@ -34,14 +34,6 @@ export const LoadingModal = ({ open, setOpen, message, isSuccess }) => {
       <DialogContent sx={styles.scrollbar}>
         <DialogContentText>{message}</DialogContentText>
       </DialogContent>
-      <DialogActions>
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: '#FF3F98', borderRadius: '8px' }}
-          onClick={() => handleClick()}>
-          <Typography color={'text.primary'}>Cerrar</Typography>
-        </Button>
-      </DialogActions>
     </Dialog>
   );
 };

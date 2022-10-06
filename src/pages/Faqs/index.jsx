@@ -94,6 +94,7 @@ export const Faqs = () => {
             </AccordionDetails>
           </Accordion>
         ))}
+        {/*POR EL LINK*/}
       </Box>
     </Box>
   );
