@@ -1,6 +1,6 @@
 import { Box, CardMedia, Typography } from '@mui/material';
 import React from 'react';
-import Image from '../../../../assets/img/landing/home1.png';
+import Image from '../../../../assets/img/landing/numero-1.png';
 export const StepOne = () => {
   return (
     <Box

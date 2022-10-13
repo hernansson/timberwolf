@@ -1,12 +1,5 @@
 import { useState } from 'react';
-import {
-  Box,
-  CardMedia,
-  Typography,
-  Select,
-  MenuItem,
-  Button,
-} from '@mui/material';
+import { Box, CardMedia, Typography, Select, MenuItem } from '@mui/material';
 import React from 'react';
 import { numberWithDots } from '../../../utils/numberWithDots';
 import { OfferButtonContainer } from './OfferButtonContainer';

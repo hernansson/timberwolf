@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrandContent } from './components/BrandContent';
 import { RegisterContainer } from './components/RegisterContainer';
-import { Box, useTheme, useMediaQuery } from '@mui/material';
+import { Box } from '@mui/material';
 import Background from '../../assets/img/landing/background.png';
 import { styles } from './components/styles';
 

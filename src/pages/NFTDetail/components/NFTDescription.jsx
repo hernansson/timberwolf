@@ -19,14 +19,10 @@ export const NFTDescription = () => {
           width: { xs: '100%', md: '50%' },
         }}>
         <Typography fontSize={'12px'} fontWeight={800} color={'text.primary'}>
-          ¡EL GRAN RIGO!
+          Colección:
         </Typography>
         <Typography fontSize={'11px'} fontWeight={500} color={'text.primary'}>
-          Esta colección de NFT`S está inspirada en nuestro amigo Rigo, ícono
-          Colombiano del ciclismo, quien nos ha regalado múltiples alegrías a lo
-          largo de los años en el Giro de Italia, La vuelta a España, El Tour de
-          Francia y por supuesto La vuelta a Colombia. Podrás elegir 10 opciones
-          diferentes que lo representan. Elige y oferta la que más te guste.
+          El Giro de Rigo Es Otra Cosa
         </Typography>
       </Box>
       <Box
@@ -41,7 +37,7 @@ export const NFTDescription = () => {
           ofertas se realizarán consecutivamente de a $100.000
         </Typography>
         <Typography fontSize={'11px'} fontWeight={500} color={'text.primary'}>
-          *Para que estés al tanto de tu oferta, cuando alguien más haga una más
+          *Para que estés al tanto de tu oferta, cuando alguien haga una más
           después de ti, recibirás un mensaje en tu correo en el que te
           informaremos que tu puja ha sido superada.
         </Typography>

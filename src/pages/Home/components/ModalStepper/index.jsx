@@ -1,18 +1,14 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
   DialogContentText,
-  DialogActions,
   Button,
-  Typography,
 } from '@mui/material';
 import { styles } from './styles';
-import { useNavigate } from 'react-router-dom';
 import { Stepper } from './Stepper';
 export const ModalStepper = () => {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
   const handleClose = () => {
     setOpen(false);
   };
