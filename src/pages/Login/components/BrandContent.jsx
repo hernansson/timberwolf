@@ -32,13 +32,6 @@ export const BrandContent = () => {
           fontWeight={500}
           lineHeight={'22px'}
           color="text.primary">
-          ¡El 4 de Octubre lo sabrás!
-        </Typography>
-        <Typography
-          fontSize={'14px'}
-          fontWeight={500}
-          lineHeight={'22px'}
-          color="text.primary">
           Regístrate para mantenerte informado
         </Typography>
       </VStack>

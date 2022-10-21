@@ -6,8 +6,6 @@ import { Box } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 export const NFTContainer = () => {
   const { status, value, error, execute } = useAsync(() => getNFTs(), false);
-
-  console.log('MIV ALOR', status);
   useEffect(() => {
     execute();
   }, []);

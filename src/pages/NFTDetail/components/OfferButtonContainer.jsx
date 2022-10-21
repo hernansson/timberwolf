@@ -33,9 +33,11 @@ export const OfferButtonContainer = ({ offer }) => {
       setOpen(true);
     }
     if (isSuccess) {
-      setMessage('Redirigiendo a tu compra...');
+      console.log(data.id_factura);
+      console.log(data.value);
       document.getElementById('factura').value = Number(data.id_factura);
       document.getElementById('valor').value = Number(data.value);
+      setMessage('Redirigiendo a tu compra...');
       document.getElementById('myForm').submit();
       //navigate('/');
     }
@@ -48,7 +50,7 @@ export const OfferButtonContainer = ({ offer }) => {
           <form
             id="myForm"
             method="POST"
-            action="https://demover3-1.tucompra.net/tc/app/inputs/compra.jsp">
+            action="https://gateway2.tucompra.com.co/tc/app/inputs/compra.jsp">
             <input name="factura" id="factura" type="hidden" value={''} />
             <input name="valor" id="valor" type="hidden" value={''} />
             <input
@@ -57,7 +59,7 @@ export const OfferButtonContainer = ({ offer }) => {
               type="hidden"
               value={`${id} NFT`}
             />
-            <input name="usuario" type="hidden" value="y44hkqk1z194g908" />
+            <input name="usuario" type="hidden" value="ng229a29856zzom5" />
             <Button
               onClick={handleAsync}
               variant={'contained'}
