@@ -1,5 +1,5 @@
 import { isIOS } from '../../../../utils/isIOS';
-console.log(isIOS());
+
 export const styles = {
   mainContainer: {
     background: 'rgba( 255, 255, 255, 0.1 )',
