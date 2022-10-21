@@ -2,7 +2,6 @@ import { Box } from '@mui/material';
 import React from 'react';
 import { WelcomeMedia } from './WelcomeMedia';
 import { WelcomeText } from './WelcomeText';
-import { ModalStepper } from '../ModalStepper';
 export const Introduction = () => {
   return (
     <Box

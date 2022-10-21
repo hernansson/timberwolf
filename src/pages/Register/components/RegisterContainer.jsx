@@ -16,7 +16,7 @@ export const RegisterContainer = () => {
   };
   useEffect(() => {
     if (isError) {
-      setMessage(error.response.data.message);
+      setMessage('Ha ocurrido un error...');
     }
     if (isLoading) {
       setOpen(true);
