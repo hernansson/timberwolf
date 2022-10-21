@@ -187,7 +187,7 @@ export const RegisterForm = ({ handleAsync }) => {
             },
           }}
           control={<Checkbox />}
-          label="Autorizo el tratamiento de uso de datos"
+          label="Acepto los términos y condiciones y política de tratamiento de datos"
         />
         <Modal open={openModal} setOpen={setOpenModal} />
       </Box>

@@ -8,11 +8,12 @@ import {
   useTheme,
   IconButton,
   Typography,
+  Box,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { styles } from './styles';
-import { tosText } from './tosText';
-import { Box } from '@mui/system';
+import { tosText, tosGeneral, tosSubasta } from './tosText';
+
 export const Modal = ({ open, setOpen }) => {
   const handleClickOpen = () => {
     setOpen(true);
@@ -31,7 +32,7 @@ export const Modal = ({ open, setOpen }) => {
         sx={{ textDecoration: 'underline', ':hover': { cursor: 'pointer' } }}
         variant="outlined"
         onClick={handleClickOpen}>
-        Anexo tratamiento de datos
+        Anexo
       </Typography>
       <Dialog
         open={open}
@@ -58,12 +59,37 @@ export const Modal = ({ open, setOpen }) => {
             <Typography
               sx={{ fontSize: { xs: '16px', md: '24px' } }}
               fontWeight={700}>
-              AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES
+              ANEXO
             </Typography>
           </Box>
         </DialogTitle>
         <DialogContent sx={styles.scrollbar}>
-          <DialogContentText>{tosText}</DialogContentText>
+          <DialogContentText>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <Box
+                sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <Typography color={'text.primary'}>
+                  AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES
+                </Typography>
+                <Typography>{tosText}</Typography>
+              </Box>
+              <Box
+                sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <Typography color={'text.primary'}>
+                  TÉRMINOS Y CONDICIONES GENERALES DEL SITIO WEB
+                </Typography>
+                <Typography textOverflow={'clip'}>{tosGeneral}</Typography>
+              </Box>
+              <Box
+                sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <Typography color={'text.primary'}>
+                  TERMINOS Y CONDICIONES SUBASTA ELECTRONICA “NFTS MANZANA
+                  POSTOBÓN”
+                </Typography>
+                <Typography>{tosSubasta}</Typography>
+              </Box>
+            </Box>
+          </DialogContentText>
         </DialogContent>
       </Dialog>
     </div>
