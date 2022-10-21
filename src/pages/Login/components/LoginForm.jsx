@@ -51,10 +51,13 @@ export const LoginForm = ({ handleAsync }) => {
           E-Mail:
         </InputLabel>
         <OutlinedInput
+          autoComplete="off"
           name="user"
           fullWidth
           onChange={handleChange}
-          sx={{ borderRadius: '8px' }}
+          sx={{
+            borderRadius: '8px',
+          }}
         />
         {!isFirstEntry['user'] && (
           <FormHelperText error={!isValid['user']}>
@@ -67,6 +70,7 @@ export const LoginForm = ({ handleAsync }) => {
           Password:
         </InputLabel>
         <OutlinedInput
+          autoComplete="off"
           name="password"
           type={showPassword ? 'text' : 'password'}
           value={userForm['password']}

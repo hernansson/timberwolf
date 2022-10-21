@@ -29,7 +29,7 @@ export const LoginContainer = () => {
       localStorage.setItem('token', JSON.stringify(data.token));
       setUser(data);
       setOpen(false);
-      navigate('/');
+      navigate(-1);
     }
   }, [isError, isLoading, isSuccess]);
 

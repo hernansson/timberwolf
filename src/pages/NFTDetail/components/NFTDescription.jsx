@@ -33,7 +33,7 @@ export const NFTDescription = () => {
           width: { xs: '100%', md: '50%' },
         }}>
         <Typography fontSize={'11px'} fontWeight={500} color={'text.primary'}>
-          *La base de cada subasta es de $1.000.000. A partir de este valor, las
+          *La base de cada subasta es de $700.000. A partir de este valor, las
           ofertas se realizarán consecutivamente de a $100.000
         </Typography>
         <Typography fontSize={'11px'} fontWeight={500} color={'text.primary'}>

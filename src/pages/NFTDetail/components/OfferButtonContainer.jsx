@@ -6,7 +6,7 @@ import { Button, FormControl } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { LoadingModal } from './LoadingModal';
 import { useAuth } from '../../../context/authContext';
-
+import { delay } from '../../../utils/delay';
 export const OfferButtonContainer = ({ offer }) => {
   const { id } = useParams();
   const { isError, error, isLoading, mutate, isSuccess, data } =
@@ -14,7 +14,7 @@ export const OfferButtonContainer = ({ offer }) => {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('Cargando...');
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const handleAsync = () => {
     const data = {
       id_product: id,
@@ -26,15 +26,15 @@ export const OfferButtonContainer = ({ offer }) => {
   useEffect(() => {
     if (isError) {
       setMessage('Ha ocurrido un error, vuelva a intentarlo');
-      console.log(error);
+      localStorage.removeItem('token');
+      setUser(null);
+      delay(1000).then(e => navigate('/login'));
     }
     if (isLoading) {
       setMessage('Cargando...');
       setOpen(true);
     }
     if (isSuccess) {
-      console.log(data.id_factura);
-      console.log(data.value);
       document.getElementById('factura').value = Number(data.id_factura);
       document.getElementById('valor').value = Number(data.value);
       setMessage('Redirigiendo a tu compra...');

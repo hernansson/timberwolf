@@ -98,7 +98,7 @@ export const faqs = [
     title:
       '¿Cuál es la oferta máxima o mínima que puedo ofrecer en esta subasta?',
     paragraphs: [
-      'La base de cada subasta es de $1.000.000. A partir de ahí, el monto permitido para ofertar será de $100.000 adelante, tu eliges el valor que quieres ofertar. ',
+      'La base de cada subasta es de $700.000. A partir de ahí, el monto permitido para ofertar será de $100.000 adelante, tu eliges el valor que quieres ofertar. ',
       'Ten en cuenta que los montos deben ser cerrados, esto quiere decir que no puedes ofertar sumas menores a $100.000 ni valores que no sean cifras cerradas como por ejemplo $20.530.',
     ],
   },

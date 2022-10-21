@@ -18,7 +18,7 @@ export const LoadingModal = ({ open, setOpen, message, isSuccess }) => {
   const handleClick = React.useCallback(() => {
     if (isSuccess) {
       handleClose();
-      navigate('/login');
+      navigate('/');
     } else {
       handleClose();
     }

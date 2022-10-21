@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useRef } from 'react';
+import { createContext, useContext, useState, useRef, useEffect } from 'react';
 const authContext = createContext();
 export const useAuth = () => {
   const context = useContext(authContext);
@@ -9,6 +9,14 @@ export const AuthProvider = ({ children }) => {
   const nftSectionRef = useRef();
   const [user, setUser] = useState(null);
   const [isOfferActive, setIsOfferActive] = useState(false);
+
+  useEffect(() => {
+    const tokenStorage = localStorage.getItem('token');
+    if (tokenStorage) {
+      const token = JSON.parse(tokenStorage);
+      setUser(token);
+    }
+  }, []);
 
   const authProps = {
     user,

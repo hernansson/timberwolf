@@ -3,7 +3,7 @@ import axios from 'axios';
 export const checkout = async user => {
   const temp = {
     factura: 'djklfjasd',
-    usuario: 'y44hkqk1z194g908',
+    usuario: 'ng229a29856zzom5',
     valor: 9000,
     descripcionFactura: 'hola',
   };
@@ -14,7 +14,7 @@ export const checkout = async user => {
     },
   };
   const res = await axios.post(
-    `https://demover3-1.tucompra.net/tc/app/inputs/compra.jsp`,
+    `https://gateway2.tucompra.com.co/tc/app/inputs/compra.jsp`,
     temp,
   );
 

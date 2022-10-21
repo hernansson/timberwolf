@@ -23,7 +23,7 @@ export const NFTCard = ({ img, price, id }) => {
         }}
       />
       <Typography fontSize={'19px'} color={'text.primary'}>{`$${price} ${
-        price > 1000000 ? '🔥' : ''
+        price > 1100000 ? '🔥' : ''
       }`}</Typography>
       <Button
         variant="contained"
