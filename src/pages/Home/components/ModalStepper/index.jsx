@@ -7,6 +7,7 @@ import {
 } from '@mui/material';
 import { styles } from './styles';
 import { Stepper } from './Stepper';
+
 export const ModalStepper = () => {
   const [open, setOpen] = useState(false);
   const handleClose = () => {
