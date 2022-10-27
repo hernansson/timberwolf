@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import NavBar from './NavBar';
 import { Footer } from './Footer';
+import { TosModal } from '../pages/Register/components/TosModal';
 export const Layout = ({ children }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.down('md'));
@@ -35,6 +36,7 @@ export const Layout = ({ children }) => {
           <Footer />
         </Box>
       </Box>
+      <TosModal />
     </>
   );
 };

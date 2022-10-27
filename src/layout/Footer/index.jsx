@@ -2,7 +2,9 @@ import React from 'react';
 import { Box, CardMedia, Typography } from '@mui/material';
 import BrandLogo from '../../assets/img/landing/brand.svg';
 import { SocialMedias } from '../../pages/Register/components/SocialMedias';
+import { useAuth } from '../../context/authContext';
 export const Footer = () => {
+  const { setOpenTos } = useAuth();
   return (
     <Box sx={{ width: '-webkit-fill-available' }}>
       <Box
@@ -41,9 +43,21 @@ export const Footer = () => {
           textAlign={'center'}
           fontSize={'9px'}
           fontWeight={700}>
-          POSTOBON S .A. I Organización Ardila Lülle I Todos los derechos
-          reservados I Términos y condiciones I Política de tratamiento de datos
-          personales I © Copyright 2022
+          POSTOBON S .A. I Organización Ardila Lülle I{' '}
+          <Typography
+            component={'span'}
+            color={'text.primary'}
+            textAlign={'center'}
+            fontSize={'9px'}
+            fontWeight={700}
+            onClick={() => setOpenTos(prev => !prev)}
+            sx={{
+              ':hover': { cursor: 'pointer', textDecoration: 'underline' },
+            }}>
+            Todos los derechos reservados I Términos y condiciones I Política de
+            tratamiento de datos personales{' '}
+          </Typography>{' '}
+          I © Copyright 2022
         </Typography>{' '}
       </Box>
     </Box>

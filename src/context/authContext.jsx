@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   const nftSectionRef = useRef();
   const [user, setUser] = useState(null);
   const [isOfferActive, setIsOfferActive] = useState(false);
-
+  const [openTos, setOpenTos] = useState(false);
   useEffect(() => {
     const tokenStorage = localStorage.getItem('token');
     if (tokenStorage) {
@@ -24,6 +24,8 @@ export const AuthProvider = ({ children }) => {
     nftSectionRef,
     isOfferActive,
     setIsOfferActive,
+    openTos,
+    setOpenTos,
   };
   return (
     <authContext.Provider value={authProps}>{children}</authContext.Provider>

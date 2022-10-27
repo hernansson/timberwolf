@@ -13,29 +13,20 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import { styles } from './styles';
 import { tosText, tosGeneral, tosSubasta } from './tosText';
+import { useAuth } from '../../../context/authContext';
 
-export const Modal = ({ open, setOpen }) => {
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+export const TosModal = () => {
+  const { openTos, setOpenTos } = useAuth();
   const theme = useTheme();
   const onlyMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const handleClose = () => {
-    setOpen(false);
+    setOpenTos(false);
   };
 
   return (
     <div>
-      <Typography
-        fontSize={'10px'}
-        color={'white'}
-        sx={{ textDecoration: 'underline', ':hover': { cursor: 'pointer' } }}
-        variant="outlined"
-        onClick={handleClickOpen}>
-        Anexo
-      </Typography>
       <Dialog
-        open={open}
+        open={openTos}
         onClose={handleClose}
         PaperProps={{
           style: { ...styles.modal, height: onlyMediumScreen ? '80%' : '40%' },

@@ -9,13 +9,16 @@ import {
   InputAdornment,
   IconButton,
   Box,
+  Typography,
 } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { VStack } from '../../../components/common';
-import { Modal } from './Modal';
+
 import { validations } from './validations';
+import { useAuth } from '../../../context/authContext';
 export const RegisterForm = ({ handleAsync }) => {
+  const { setOpenTos } = useAuth();
   const [userForm, setUserForm] = useState('');
   const [isValid, setIsValid] = useState({
     name: false,
@@ -24,7 +27,7 @@ export const RegisterForm = ({ handleAsync }) => {
     passwordVerify: false,
     tos: false,
   });
-  const [openModal, setOpenModal] = useState(false);
+
   const [isFirstEntry, setIsFirstEntry] = useState({
     name: true,
     user: true,
@@ -172,7 +175,7 @@ export const RegisterForm = ({ handleAsync }) => {
           </FormHelperText>
         )}
       </Box>
-      <Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <FormControlLabel
           name="tos"
           onChange={handleCheck}
@@ -189,7 +192,14 @@ export const RegisterForm = ({ handleAsync }) => {
           control={<Checkbox />}
           label="Acepto los términos y condiciones y política de tratamiento de datos"
         />
-        <Modal open={openModal} setOpen={setOpenModal} />
+        <Typography
+          fontSize={'10px'}
+          color={'white'}
+          sx={{ textDecoration: 'underline', ':hover': { cursor: 'pointer' } }}
+          variant="outlined"
+          onClick={() => setOpenTos(prev => !prev)}>
+          Anexo
+        </Typography>
       </Box>
 
       <Button
